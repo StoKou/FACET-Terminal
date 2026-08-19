@@ -58,8 +58,6 @@ All models below use the `Terminus-2` agent. Base and FACET models are evaluated
 
 Only 1.2K successful trajectories yield consistent gains across all three scales. The 9B model obtains the largest absolute gain, while the 4B model improves by **40.5%** relatively. FACET-Terminal-Qwen3.5-27B reaches **47.57**, only 1.49 points below Qwen3.5-397B at **49.06** under the same setting, despite being roughly 15 times smaller.
 
-> These are pre-release paper results. Models on public leaderboards may use different agents, inference budgets, or evaluation settings and should not be compared directly with this table.
-
 # 📦 Installation
 
 ## Requirements
