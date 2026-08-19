@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | [English](README_EN.md)
 
-<img src="docs/figures/facet-banner.png" alt="FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis" width="100%">
+<img src="asset/facet-banner.png" alt="FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis" width="100%">
 
 <p>
   <img src="https://img.shields.io/badge/Task-Terminal_Task_Synthesis-2D8BC3" alt="Task">
@@ -34,7 +34,7 @@ It is built around two principles:
 - **Preserve source intent** across multi-stage generation, including capabilities, dependencies, I/O contracts, and procedural knowledge.
 - **Share executable state** by realizing the environment first and grounding the instruction, solution, and verifier in the same container state.
 
-![FACET Pipeline](docs/figures/facet-pipeline.png)
+![FACET Pipeline](asset/facet-pipeline.png)
 
 # ✨ Highlights
 
@@ -52,61 +52,13 @@ Starting from **71,341** source skills, FACET constructs **7,852** scenario-skil
 
 All models below use the `Terminus-2` agent. Base and FACET models are evaluated under the same inference configuration, with three independent attempts per task and the mean pass rate reported.
 
-| Model | Size | Base | FACET-Terminal | Absolute Gain |
-|:--|--:|--:|--:|--:|
-| Qwen3.5-4B | 4B | 17.60 | **24.72** | **+7.12** |
-| Qwen3.5-9B | 9B | 27.34 | **35.58** | **+8.24** |
-| Qwen3.5-27B | 27B | 40.82 | **47.57** | **+6.75** |
+<div align="center">
+  <img src="asset/facet-main-results.png" alt="Main FACET results on Terminal-Bench 2.1" width="100%">
+</div>
 
 Only 1.2K successful trajectories yield consistent gains across all three scales. The 9B model obtains the largest absolute gain, while the 4B model improves by **40.5%** relatively. FACET-Terminal-Qwen3.5-27B reaches **47.57**, only 1.49 points below Qwen3.5-397B at **49.06** under the same setting, despite being roughly 15 times smaller.
 
 > These are pre-release paper results. Models on public leaderboards may use different agents, inference budgets, or evaluation settings and should not be compared directly with this table.
-
-## Comparison with Existing Terminal Datasets
-
-All trajectory collection and task evaluation use `Terminus-2`. `Tests` denotes the average number of executable checkpoints per task, and P@k denotes pass@k in percent.
-
-| Dataset | # Traj. | Turns | # Tasks | Tests | P@1 | P@3 |
-|:--|--:|--:|--:|--:|--:|--:|
-| Nemotron-Terminal | 5K | 6.12 | 15K | 6.18 | 40.67 | 48.00 |
-| Endless-Terminals | 200 | 4.53 | 2,492 | 5.51 | 83.00 | 87.00 |
-| Terminal-Lego | 32K | 5.77 | 15K | 16.60 | 47.00 | 49.00 |
-| TerminalWorld | 200 | **11.94** | 1,530 | 3.98 | 57.00 | 82.00 |
-| Tmax | 500 | 11.14 | 15K | 3.29 | 80.00 | 86.00 |
-| **FACET (Ours)** | **1.2K** | 11.86 | **6,078** | **22.77** | 27.00 | 35.00 |
-
-FACET combines long interaction horizons with the densest executable verification, averaging **22.77** checkpoints per task. Its lower task-level pass rates reflect strict conjunctive success criteria: an agent must satisfy the primary workflow, secondary artifacts, content constraints, and cross-artifact consistency simultaneously.
-
-## Task-Construction Funnel
-
-| Stage | Count | Stage Retention |
-|:--|--:|--:|
-| Scenario-skill seeds | 7,852 | — |
-| Seeds with first-build logs | 7,841 | 99.86% |
-| Initial environment success | 6,630 | 84.56% |
-| Successful environments after repair | 7,504 | 95.70% |
-| Entering task validation | 7,446 | 99.23% |
-| First-pass valid tasks | 2,856 | 38.35% |
-| Final validated tasks | **6,078** | **81.63%** |
-
-## Generation-Order Ablation
-
-We compare three artifact-generation orders on the same 100 semantic paths. Initial validity uses tasks reaching validation as the denominator; final yield uses all 100 selected paths.
-
-| Strategy | Generation Order | Reached Validation | Initially Valid | Final Yield |
-|:--|:--|--:|--:|--:|
-| **Forward (Ours)** | Instruction → Solution → Verifier | 99 | **46 (46.5%)** | **83/100** |
-| Reverse | Instruction → Verifier → Solution | 91 | 22 (24.2%) | 63/100 |
-| Joint | All artifacts in one call | 96 | 36 (37.5%) | 65/100 |
-
-Forward lets the verifier observe the generated reference solution, improving contract alignment among instructions, execution behavior, and checks. Forward allows up to five repair rounds, whereas Reverse and Joint allow three; final yield therefore characterizes the complete pipeline configurations rather than isolated repair efficiency under an identical budget.
-
-# 🔍 Data and Task Analysis
-
-- **Skill coverage:** 71,341 source skills span AI and agents, software and systems, data analysis, document workflows, and multimedia creation.
-- **Long-horizon interaction:** successful training trajectories average 11.86 turns, and 95.6% begin with an observation-only step.
-- **Strict verification:** teacher rollouts pass 89.40% of individual checks, while only 20.94% achieve complete task success, indicating that many failures miss only a subset of constraints.
-- **Near-success failures:** 54.00% of unsuccessful rollouts fail only one or two verifier checks, allowing dense verification to distinguish near-complete trajectories from total failures.
 
 # 📦 Installation
 
@@ -176,7 +128,8 @@ The default adapter expects one skill pair per JSONL record:
 FACET-Terminal/
 ├── README.md               # Default Chinese project documentation
 ├── README_EN.md            # English project documentation
-├── docs/                   # Static GitHub Pages site and paper figures
+├── asset/                  # README-only images
+├── docs/                   # Static GitHub Pages site and its own assets
 └── facet/                  # All open-source code, configs, and scripts
     ├── common/             # Config, IO, hashing, model client, and run context
     ├── configs/            # Sanitized configs for three generation strategies
