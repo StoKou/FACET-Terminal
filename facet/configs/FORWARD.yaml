@@ -1,0 +1,56 @@
+run:
+  root_dir: runs
+  run_id: facet_terminal_forward_xxx
+
+execution:
+  default_workers: 1
+
+model:
+  chat:
+    api_base: xxx
+    api_key_env: FACET_API_KEY
+    api_key: ""
+    model_name: xxx
+    temperature: 0.7
+    max_tokens: 16384
+    timeout_sec: 300
+    max_retries: 3
+
+docker:
+  base_image: ubuntu:22.04
+
+facet_terminal:
+  convert_input:
+    input_run_dir: .
+    sources:
+      - path: xxx/skill_pairs.jsonl
+        format: skill_pair_jsonl
+  selection:
+    target_count: 100
+    accepted_only: true
+    require_non_empty_scenario_texts: true
+    dedupe_key: skill_set
+    seed: 42
+  planning:
+    mode: llm
+  instruction_ref:
+    mode: llm
+  env_build:
+    mode: llm
+    base_image: ubuntu:22.04
+    build_enabled: true
+    repair_attempts: 3
+  env_repair:
+    mode: llm
+  instruction:
+    mode: llm
+  solution:
+    mode: llm
+  tests:
+    mode: llm
+  validation:
+    input_jsonl: artifacts/facet_terminal/test_units.jsonl
+  repair:
+    input_jsonl: artifacts/facet_terminal/validation_units.jsonl
+    mode: llm
+    max_rounds: 5

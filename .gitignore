@@ -3,6 +3,8 @@
 # dependencies
 **/node_modules
 /website/
+**/.venv/
+**/.uv-cache/
 /.pnp
 .pnp.*
 .yarn/*
@@ -13,6 +15,7 @@
 
 # testing
 **/coverage
+.pytest_cache/
 
 # next.js
 **/.next/
@@ -22,6 +25,8 @@
 # misc
 .DS_Store
 *.pem
+__pycache__/
+*.py[cod]
 
 # debug
 npm-debug.log*
@@ -31,6 +36,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!facet/.env.example
 
 # vercel
 .vercel
@@ -41,3 +48,12 @@ next-env.d.ts
 **/.wrangler/
 /outputs/
 /work/
+
+# FACET runtime data and generated artifacts
+/facet/configs/local/
+/facet/runs/
+/facet/artifacts/
+/facet/checkpoints/
+/facet/logs/
+/facet/reports/
+/facet/final/
