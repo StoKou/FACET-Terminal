@@ -7,12 +7,13 @@
 <p>
   <img src="https://img.shields.io/badge/Task-Terminal_Task_Synthesis-2D8BC3" alt="Task">
   <img src="https://img.shields.io/badge/Framework-FACET-5AAFE0" alt="Framework">
+  <a href="https://arxiv.org/abs/2608.18580"><img src="https://img.shields.io/badge/arXiv-2608.18580-B31B1B" alt="arXiv"></a>
   <img src="https://img.shields.io/badge/Python-3.11--3.13-3776AB" alt="Python">
   <img src="https://img.shields.io/badge/License-Apache--2.0-7AAED1" alt="License">
 </p>
 
 [[🌐 项目主页](https://stokou.github.io/FACET-Terminal/)]
-[[📖 论文（即将发布）](#)]
+[[📖 论文](https://arxiv.org/abs/2608.18580)]
 [[🤗 数据（即将发布）](#)]
 [[🤗 模型（即将发布）](#)]
 
@@ -22,8 +23,9 @@
 
 # 🔥 动态
 
+- **`2026-08-20`**：FACET 论文已发布于 [arXiv](https://arxiv.org/abs/2608.18580)。
 - **`2026-08-19`**：发布 FACET-Terminal 任务合成代码预览版与项目主页。
-- **Coming Soon**：论文、数据、训练配置和模型权重。
+- **Coming Soon**：数据、训练配置和模型权重。
 
 # 💡 FACET
 
@@ -171,7 +173,9 @@ uv run pytest
   title   = {{FACET}: Preserving Source Intent and Executable State in Terminal Task Synthesis},
   author  = {Kou Shi and Zun Wang and Qisheng Su and Shiting Huang and Ziao Zhang and Zhen Fang and Qingnan Ren and Jin Liu and Yu Zeng and Yiming Zhao and Lin Chen and Zehui Chen and Feng Zhao},
   year    = {2026},
-  note    = {Preprint},
-  url     = {https://github.com/StoKou/FACET-Terminal}
+  eprint  = {2608.18580},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url     = {https://arxiv.org/abs/2608.18580}
 }
 ```

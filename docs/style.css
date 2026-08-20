@@ -58,7 +58,8 @@ main { overflow: hidden; }
 .hero-glow-one { width: 650px; height: 650px; top: -300px; right: -160px; background: radial-gradient(circle, rgba(139,211,255,.24), transparent 68%); }
 .hero-glow-two { width: 560px; height: 560px; bottom: -280px; left: -180px; background: radial-gradient(circle, rgba(73,153,218,.24), transparent 68%); }
 .hero-inner { position: relative; z-index: 2; max-width: 980px; margin: 0 auto; text-align: center; }
-.status-pill { display: inline-flex; gap: 9px; align-items: center; padding: 7px 13px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); border-radius: 99px; color: #d2ddd8; font-size: 12px; letter-spacing: .04em; }
+.status-pill { display: inline-flex; gap: 9px; align-items: center; padding: 7px 13px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.06); border-radius: 99px; color: #d2ddd8; font-size: 12px; letter-spacing: .04em; text-decoration: none; transition: border-color .2s, background .2s; }
+.status-pill:hover { border-color: rgba(139,211,255,.55); background: rgba(139,211,255,.1); }
 .status-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px var(--lime); }
 .kicker { margin: 34px 0 13px; color: var(--lime); font: 700 13px/1.3 monospace; text-transform: uppercase; letter-spacing: .16em; }
 .hero h1 { max-width: 880px; margin: 0 auto; font-family: Georgia, "Times New Roman", serif; font-size: clamp(42px, 4.8vw, 62px); line-height: 1.05; letter-spacing: -.035em; font-weight: 700; }
@@ -67,6 +68,8 @@ main { overflow: hidden; }
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 32px 0 34px; }
 .button { display: inline-flex; align-items: center; gap: 12px; border-radius: 99px; padding: 12px 19px; font-size: 13px; font-weight: 700; text-decoration: none; }
 .button-primary { background: var(--lime); color: var(--ink); }
+.button-outline { color: #d7e5ee; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06); }
+.button-outline:hover { border-color: rgba(139,211,255,.58); background: rgba(139,211,255,.1); }
 .button-muted { color: #aab7b2; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.04); }
 .authors { max-width: 900px; margin: 0 auto; color: #d4ddd9; font-size: 14px; line-height: 1.9; }
 .authors span { display: inline-block; margin-right: 5px; }
