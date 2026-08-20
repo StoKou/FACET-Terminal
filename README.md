@@ -14,8 +14,8 @@
 
 [[🌐 项目主页](https://stokou.github.io/FACET-Terminal/)]
 [[📖 论文](https://arxiv.org/abs/2608.18580)]
-[[🤗 数据（即将发布）](#)]
-[[🤗 模型（即将发布）](#)]
+[[🤗 数据](https://huggingface.co/datasets/FACET-Terminal/FACET-Terminal-Tasks-6k)]
+[[🤗 模型](https://huggingface.co/FACET-Terminal)]
 
 </div>
 
@@ -23,9 +23,18 @@
 
 # 🔥 动态
 
+- **`2026-08-20`**：发布包含 **6,020** 个任务的 FACET-Terminal-Tasks-6k 数据集及 4B、9B、27B 模型。
 - **`2026-08-20`**：FACET 论文已发布于 [arXiv](https://arxiv.org/abs/2608.18580)。
 - **`2026-08-19`**：发布 FACET-Terminal 任务合成代码预览版与项目主页。
-- **Coming Soon**：数据、训练配置和模型权重。
+
+# 🤗 公开资源
+
+| 类型 | 资源 |
+| --- | --- |
+| 数据集 | [FACET-Terminal-Tasks-6k](https://huggingface.co/datasets/FACET-Terminal/FACET-Terminal-Tasks-6k)（6,020 个公开任务） |
+| 4B 模型 | [FACET-Terminal-Qwen3.5-4B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-4B) |
+| 9B 模型 | [FACET-Terminal-Qwen3.5-9B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-9B) |
+| 27B 模型 | [FACET-Terminal-Qwen3.5-27B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-27B) |
 
 # 💡 FACET
 

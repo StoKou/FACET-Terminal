@@ -14,8 +14,8 @@
 
 [[🌐 Project Page](https://stokou.github.io/FACET-Terminal/)]
 [[📖 Paper](https://arxiv.org/abs/2608.18580)]
-[[🤗 Data (Coming Soon)](#)]
-[[🤗 Models (Coming Soon)](#)]
+[[🤗 Data](https://huggingface.co/datasets/FACET-Terminal/FACET-Terminal-Tasks-6k)]
+[[🤗 Models](https://huggingface.co/FACET-Terminal)]
 
 </div>
 
@@ -23,9 +23,18 @@
 
 # 🔥 News
 
+- **`2026-08-20`**: Released FACET-Terminal-Tasks-6k with **6,020** tasks, together with the 4B, 9B, and 27B model checkpoints.
 - **`2026-08-20`**: The FACET paper is now available on [arXiv](https://arxiv.org/abs/2608.18580).
 - **`2026-08-19`**: Released the FACET-Terminal task-synthesis code preview and project page.
-- **Coming Soon**: Datasets, training configurations, and model checkpoints.
+
+# 🤗 Open Resources
+
+| Type | Resource |
+| --- | --- |
+| Dataset | [FACET-Terminal-Tasks-6k](https://huggingface.co/datasets/FACET-Terminal/FACET-Terminal-Tasks-6k) (6,020 public tasks) |
+| 4B model | [FACET-Terminal-Qwen3.5-4B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-4B) |
+| 9B model | [FACET-Terminal-Qwen3.5-9B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-9B) |
+| 27B model | [FACET-Terminal-Qwen3.5-27B](https://huggingface.co/FACET-Terminal/FACET-Terminal-Qwen3.5-27B) |
 
 # 💡 FACET
 
