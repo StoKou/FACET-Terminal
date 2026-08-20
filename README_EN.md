@@ -154,12 +154,6 @@ FACET-Terminal/
     └── uv.lock             # Reproducible dependency lockfile
 ```
 
-# 🔒 Release and Safety Notes
-
-- Source datasets, generated tasks, trajectories, model weights, and runtime outputs are not included.
-- API keys are read from `FACET_API_KEY`; `facet/.env*`, `facet/configs/local/`, and runtime directories under `facet/` are ignored.
-- The pipeline builds and executes generated Docker tasks. Run it on an isolated development machine or sandbox, not on a production host that contains sensitive data.
-
 # 🧪 Tests
 
 ```bash
